@@ -1,24 +1,62 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+|    column    |    type    |             options                  |
+|:------------:|:----------:|:------------------------------------:|
+|     name     |   string   |  index:true, null:false, unique:true |
+|     email    |   stirng   |            null:false                |
+|   password   |   string   |            null:false                |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+  ・has_many :groups, through :members
+  ・has_many :messages
+  ・has_many :members
 
-* Database creation
 
-* Database initialization
+## messages table
 
-* How to run the test suite
+|    column    |    type    |             options                  |
+|:------------:|:----------:|:------------------------------------:|
+|     body     |    text    |                                      |
+|    image     |   string   |                                      |
+|    group_id  |   integer  |                                      |
+|    user_id   |   integer  |                                      |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Association
 
-* ...
+  ・belongs_to :group
+  ・belongs_to :user
+
+
+
+## gropups table
+
+|    column    |    type    |             options                  |
+|:------------:|:----------:|:------------------------------------:|
+|     name     |   string   |            null:false                |
+
+
+
+### Association
+
+  ・has_many :users, through :members
+  ・has_many :messages
+  ・has_many :memebers
+
+
+## members table
+
+|    column    |    type    |             options                  |
+|:------------:|:----------:|:------------------------------------:|
+|    group_id  |   integer  |                                      |
+|    user_id   |   integer  |                                      |
+
+
+### Association
+
+  ・belongs_to :group
+  ・belongs_to :user
