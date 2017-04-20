@@ -11,8 +11,8 @@
 
 ### Association
 
-  ・has_many :groups, through :members
-  ・has_many :messages
+  ・has_many :groups, through :members  
+  ・has_many :messages  
   ・has_many :members
 
 
@@ -28,7 +28,7 @@
 
 ### Association
 
-  ・belongs_to :group
+  ・belongs_to :group  
   ・belongs_to :user
 
 
@@ -43,8 +43,8 @@
 
 ### Association
 
-  ・has_many :users, through :members
-  ・has_many :messages
+  ・has_many :users, through :members  
+  ・has_many :messages  
   ・has_many :memebers
 
 
@@ -58,5 +58,5 @@
 
 ### Association
 
-  ・belongs_to :group
+  ・belongs_to :group  
   ・belongs_to :user
