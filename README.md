@@ -4,7 +4,7 @@
 
 |    column    |    type    |             options                  |
 |:------------:|:----------:|:------------------------------------:|
-|     name     |   string   |            index:true                |
+|     name     |   string   |                                      |
 
 
 ### Association
