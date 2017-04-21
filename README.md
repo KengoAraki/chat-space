@@ -4,9 +4,7 @@
 
 |    column    |    type    |             options                  |
 |:------------:|:----------:|:------------------------------------:|
-|     name     |   string   |  index:true, null:false, unique:true |
-|     email    |   stirng   |            null:false                |
-|   password   |   string   |            null:false                |
+|     name     |   string   |            index:true                |
 
 
 ### Association
@@ -22,8 +20,8 @@
 |:------------:|:----------:|:------------------------------------:|
 |     body     |    text    |                                      |
 |    image     |   string   |                                      |
-|    group_id  |   integer  |                                      |
-|    user_id   |   integer  |                                      |
+|     group    | references |           foreign_key:true           |
+|     user     | references |           foreign_key:true           |
 
 
 ### Association
@@ -33,7 +31,7 @@
 
 
 
-## gropups table
+## groups table
 
 |    column    |    type    |             options                  |
 |:------------:|:----------:|:------------------------------------:|
@@ -52,8 +50,8 @@
 
 |    column    |    type    |             options                  |
 |:------------:|:----------:|:------------------------------------:|
-|    group_id  |   integer  |                                      |
-|    user_id   |   integer  |                                      |
+|     group    | references |           foreign_key:true           |
+|     user     | references |           foreign_key:true           |
 
 
 ### Association
