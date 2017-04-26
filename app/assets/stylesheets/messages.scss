@@ -1,14 +1,20 @@
+$white: #ffffff;
+$sky-blue: #38aef0;
+$cyan: #38fef0;
+$gray: #999999;
+$dark-gray: #434a54;
+
 @import "clearfix";
 
 html,body{
   height: 100%;
-  background-color: #fff;
+  background-color: $white;
   margin: 0 auto;
 }
 
 .notification{
-  background-color: #38aef0;
-  color: white;
+  background-color: $sky-blue;
+  color: $white;
   text-align: center;
 }
 
@@ -30,7 +36,7 @@ html,body{
       height: 50px;
       width: 100%;
       line-height: 50px;
-      color: #fff;
+      color: $white;
       margin: auto 0;
       position: absolute;
       top: 0;
@@ -39,7 +45,7 @@ html,body{
       .chat-side__user-name{
         font-size: 16px;
         font-weight: bold;
-        color: #fff;
+        color: $white;
         margin: 0 20px;
         display: inline-block;
         float: left;
@@ -67,7 +73,7 @@ html,body{
     background-color: #2f3e51;
   }
     .chat-side__groups-list{
-      color: #fff;
+      color: $white;
     }
       .chat-side__group{
         padding: 20px;
@@ -105,19 +111,23 @@ html,body{
       }
 
       .chat-main__header--group-edit-btn{
-        color: #38fef0;
+        color: $cyan;
         font-size: 15px;
         padding: 12.5px 20px;
         margin: 28px 20px 0;
-        border: 1px solid #38fef0;
+        border: 1px solid $cyan;
         float: right;
       }
 
     .chat-main__header-members{
-      color: #999999;
+      color: $gray;
       font-size: 12px;
       margin: 0 40px;
     }
+      span.chat-main__header-members{
+        font-style: italic;
+        margin: 0;
+      }
 
   .chat-main__body{
     height: calc( 100vh - 15% - 90px );
@@ -134,7 +144,7 @@ html,body{
       }
 
         .chat-main__message-name{
-          color: #434a54;
+          color: $dark-gray;
 
           font-size: 16px;
           font-weight: bold;
@@ -142,14 +152,14 @@ html,body{
         }
 
         .chat-main__message-time{
-          color: #999999;
+          color: $gray;
           padding: 0 10px 10px;
           font-size: 12px;
           float: left;
         }
 
         .chat-main__message-body{
-          color: #434a54;
+          color: $dark-gray;
           clear: both;
         }
 
@@ -196,11 +206,11 @@ html,body{
           }
 
         .submit{
-          color: #ffffff;
+          color: $white;
           height: 50px;
           width: 100px;
           text-align: center;
-          background-color: #38aef0;
+          background-color: $sky-blue;
           margin: 20px 0;
           position: absolute;
           top: 0;
