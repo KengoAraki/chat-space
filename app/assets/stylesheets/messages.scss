@@ -20,7 +20,7 @@ html,body{
     height: 15%;
     width: 100%;
     position: relative;
-    background-color: #253141;
+    background-color: $dark-blue;
   }
 
     .chat-side__user-content{
@@ -62,7 +62,7 @@ html,body{
   .chat-side__groups{
     height: 85%;
     width: 100%;
-    background-color: #2f3e51;
+    background-color: $navy-blue;
   }
     .chat-side__groups-list{
       color: $white;
@@ -87,7 +87,7 @@ html,body{
 }
   .chat-main__header{
     height: 15%;
-    border: 1px solid #eee;
+    border: 1px solid $light-gray;
   }
 
     .chat-main__header--group{
@@ -96,7 +96,7 @@ html,body{
 
     }
       .chat-main__header--group-name{
-        color: #333333;
+        color: $gargoyle;
         font-size: 20px;
         margin: 35px 0 15px;
         float: left;
@@ -158,7 +158,7 @@ html,body{
   .chat-main__footer{
     height: 90px;
     width: 100%;
-    background-color: #b8c3c7
+    background-color: $sky-gray;
   }
 
     .chat-main__footer-form{
