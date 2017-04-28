@@ -1,0 +1,211 @@
+html,body{
+  height: 100%;
+  background-color: $white;
+  margin: 0 auto;
+}
+
+.notification{
+  background-color: $sky-blue;
+  color: $white;
+  text-align: center;
+}
+
+.chat-side{
+  height: 100%;
+  width: 300px;
+  float: left;
+}
+
+  .chat-side__user{
+    height: 15%;
+    width: 100%;
+    position: relative;
+    background-color: $dark-blue;
+  }
+
+    .chat-side__user-content{
+      @include clearfix();
+      height: 50px;
+      width: 100%;
+      line-height: 50px;
+      color: $white;
+      margin: auto 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+      .chat-side__user-name{
+        font-size: 16px;
+        font-weight: bold;
+        color: $white;
+        margin: 0 20px;
+        display: inline-block;
+        float: left;
+      }
+
+      .chat-side__user--new-group{
+        margin-left: 90px;
+        position: relative;
+        display: inline-block;
+      }
+        .fa{
+          display: inline-block;
+        }
+
+      .chat-side__user--edit-user{
+        display: inline-block;
+      }
+        .fa{
+          display: inline-block;
+        }
+
+  .chat-side__groups{
+    height: 85%;
+    width: 100%;
+    background-color: $navy-blue;
+  }
+    .chat-side__groups-list{
+      color: $white;
+    }
+      .chat-side__group{
+        padding: 20px;
+      }
+
+        .chat-side_group-name{
+          font-size: 25px;
+
+        }
+
+        .chat-side__group-message{
+          font-size: 11px;
+        }
+
+.chat-main{
+  height: 100vh;
+  width: calc( 100vw - 300px );
+  float: left;
+}
+  .chat-main__header{
+    height: 15%;
+    border: 1px solid $light-gray;
+  }
+
+    .chat-main__header--group{
+      @include clearfix();
+      margin: 0 40px;
+
+    }
+      .chat-main__header--group-name{
+        color: $gargoyle;
+        font-size: 20px;
+        margin: 35px 0 15px;
+        float: left;
+      }
+
+      .chat-main__header--group-edit-btn{
+        color: $cyan;
+        font-size: 15px;
+        padding: 12.5px 20px;
+        margin: 28px 20px 0;
+        border: 1px solid $cyan;
+        float: right;
+      }
+
+    .chat-main__header-members{
+      color: $gray;
+      font-size: 12px;
+      margin: 0 40px;
+    }
+      span.chat-main__header-members{
+        font-style: italic;
+        margin: 0;
+      }
+
+  .chat-main__body{
+    height: calc( 100vh - 15% - 90px );
+    overflow-y: scroll;
+  }
+    .chat-main__body--messages-list{
+      padding-top: 26px;
+      padding-left: 40px;
+    }
+
+      .chat-main__message{
+        @include clearfix();
+        padding: 20px 0;
+      }
+
+        .chat-main__message-name{
+          color: $dark-gray;
+
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+        }
+
+        .chat-main__message-time{
+          color: $gray;
+          padding: 2px 10px 0;
+          font-size: 12px;
+          float: left;
+        }
+
+        .chat-main__message-body{
+          color: $dark-gray;
+          clear: both;
+        }
+
+  .chat-main__footer{
+    height: 90px;
+    width: 100%;
+    background-color: $sky-gray;
+  }
+
+    .chat-main__footer-form{
+      margin: 0 40px;
+      position: relative;
+    }
+
+      .chat-main__footer-body{
+        position: relative;
+      }
+
+        .message{
+          width: calc( 100% - 150px );
+          padding: 15px 10px;
+          margin: 20px 0;
+          border: none;
+        }
+
+        .chat-file{
+          height: 50px;
+          width: 40px;
+          margin: 32px 130px 20px 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+          .image{
+            position: absloute;
+            top: 15px;
+            left: 15px;
+            display: none;
+          }
+
+          .fa.fa-image{
+
+          }
+
+        .submit{
+          color: $white;
+          height: 50px;
+          width: 100px;
+          text-align: center;
+          background-color: $sky-blue;
+          margin: 20px 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: none;
+        }
