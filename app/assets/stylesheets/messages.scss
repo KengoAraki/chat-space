@@ -9,7 +9,6 @@ html,body{
   width: 300px;
   float: left;
 
-
   &__user{
     height: 15%;
     width: 100%;
@@ -162,11 +161,9 @@ html,body{
     &-form{
       margin: 0 40px;
       position: relative;
-    }
 
-      .chat-main__footer-body{
+      &__body{
         position: relative;
-      }
 
         .message{
           width: calc( 100% - 150px );
@@ -175,27 +172,24 @@ html,body{
           border: none;
         }
 
-        .chat-file{
+        label{
           height: 50px;
           width: 40px;
           margin: 32px 130px 20px 0;
           position: absolute;
           top: 0;
           right: 0;
-        }
 
-          .image{
+          input{
             position: absloute;
             top: 15px;
             left: 15px;
             display: none;
           }
+        }
+      }
 
-          .fa.fa-image{
-
-          }
-
-        .submit{
+        input[type = "submit"]{
           color: $white;
           height: 50px;
           width: 100px;
@@ -207,5 +201,6 @@ html,body{
           right: 0;
           border: none;
         }
+    }
   }
 }
