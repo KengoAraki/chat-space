@@ -2,10 +2,10 @@
   .chat-side
     .chat-side__user
       .chat-side__user-content
-        %h4.chat-side__user-name Kengo Araki
-        %a.chat-side__user--new-group
+        %h4.chat-side__user-content-name= current_user.name
+        = link_to new_group_path, class: "chat-side__user-content--new-group" do
           %i.fa.fa-pencil-square-o
-        %a.chat-side__user--edit-user
+        = link_to edit_user_registration_path, class: "chat-side__user-content--edit-user" do
           %i.fa.fa-cog
 
     .chat-side__groups
@@ -38,7 +38,7 @@
 
     .chat-main__footer
       %form.chat-main__footer-form#new_message
-        .chat-main__footer-body
+        .chat-main__footer-form__body
           %input.message{ type: "text", placeholder: "type a messsage" }
           %label.chat-file
             %input.image{ type: "file" }
