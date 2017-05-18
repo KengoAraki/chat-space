@@ -69,10 +69,12 @@ html,body{
 
         &-name{
           font-size: 15px;
+          color: $white
         }
 
         &-message{
           font-size: 11px;
+          color: $white;
         }
       }
   }
@@ -120,7 +122,7 @@ html,body{
   }
 
   &__body{
-    height: calc( 100vh - 15% - 90px );
+    height: calc( 100vh - 15% - 92px );
     overflow-y: scroll;
 
     &--messages-list{
@@ -130,7 +132,7 @@ html,body{
 
       .chat-main__message{
         @include clearfix();
-        padding: 20px 0;
+        padding: 20px 40px;
 
         &-name{
           color: $dark-gray;
@@ -148,6 +150,7 @@ html,body{
 
         &-body{
           color: $dark-gray;
+          padding: 10px 0 30px;
           clear: both;
         }
       }
@@ -167,12 +170,14 @@ html,body{
 
         .message{
           width: calc( 100% - 150px );
-          padding: 15px 10px;
+          padding: 0 10px;
           margin: 20px 0;
+          height: 50px;
+          line-height: 50px;
           border: none;
         }
 
-        label{
+        .chat-file{
           height: 50px;
           width: 40px;
           margin: 32px 130px 20px 0;
@@ -180,7 +185,7 @@ html,body{
           top: 0;
           right: 0;
 
-          input{
+          .image{
             position: absloute;
             top: 15px;
             left: 15px;
@@ -189,7 +194,7 @@ html,body{
         }
       }
 
-        input[type = "submit"]{
+        .submit{
           color: $white;
           height: 50px;
           width: 100px;
