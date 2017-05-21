@@ -1,5 +1,4 @@
-.chat-group-form
-  %h1 チャットグループ編集
+.chat-group-form__content
   = form_for @group do |f|
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
@@ -12,7 +11,7 @@
         = f.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
         .chat-group-form__search
-          = f.collection_check_boxes :user_ids, @users_id , :id, :name, checked: @group.users.ids
+          = f.collection_check_boxes :user_ids, @users_id, :id, :name, checked: @group.users.ids
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
