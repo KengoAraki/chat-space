@@ -1,49 +1,32 @@
 %body
   .chat-side
-    .chat-side__user
-      .chat-side__user-content
-        %h4.chat-side__user-content-name= current_user.name
-        = link_to new_group_path, class: "chat-side__user-content--new-group" do
-          %i.fa.fa-pencil-square-o
-        = link_to edit_user_registration_path, class: "chat-side__user-content--edit-user" do
-          %i.fa.fa-cog
-
-    .chat-side__groups
-      .chat-side__groups-list
-        .chat-side__group
-          %p.chat-side__group-name group1
-          %p.chat-side__group-message Wow! first comment
-        .chat-side__group
-          %p.chat-side__group-name group2
-          %p.chat-side__group-message Oh! first comment
-        .chat-side__group
-          %p.chat-side__group-name group3
-          %p.chat-side__group-message Yeah! first comment
+    = render 'layouts/chatside'
 
   .chat-main
     .chat-main__header
       .chat-main__header--group.clearfix
-        %h4.chat-main__header--group-name group1
-        %a.chat-main__header--group-edit-btn edit
+        %h4.chat-main__header--group-name
+          = @group.name
+        = link_to "Edit", edit_group_path(@group), class: "chat-main__header--group-edit-btn"
       .chat-main__header-members
         MEMBER:
-        %span.chat-main__header-members Kengo Araki
+        %span.chat-main__header-members
+          = @group.users.pluck(:name).join(", ")
 
     .chat-main__body
       .chat-main__body--messages-list
-        .chat-main__message.clearfix#319
-          %p.chat-main__message-name Kengo Araki
-          %p.chat-main__message-time 2017/04/23 09:26:11
-          %p.chat-main__message-body Wow! first comment
+      .chat-main__message.clearfix#319
+        = render @messages
 
     .chat-main__footer
-      %form.chat-main__footer-form#new_message
-        .chat-main__footer-form__body
-          %input.message{ type: "text", placeholder: "type a messsage" }
-          %label.chat-file
-            %input.image{ type: "file" }
-            %i.fa.fa-image
-        %input.submit{ type: "submit", value: "Send" }
+      = form_for [@group, @message] do |f|
+        .chat-main__footer-form
+          .chat-main__footer-form__body
+            = f.text_area :body, placeholder: " type a message", class: "message"
+            = f.label :image, class: "chat-file" do
+              %i.fa.fa-image
+              = f.file_field :image, class: "image"
+          = f.submit "Send", class: "submit"
 
 
 

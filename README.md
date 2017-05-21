@@ -19,7 +19,7 @@
 |    column    |    type    |             options                  |
 |:------------:|:----------:|:------------------------------------:|
 |     body     |    text    |                                      |
-|    image     |   string   |                                      |
+|    image     |    text    |                                      |
 |     group    | references |           foreign_key:true           |
 |     user     | references |           foreign_key:true           |
 
