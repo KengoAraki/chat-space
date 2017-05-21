@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
+  before_action :checkbox_users, excpet: [:index, :show, :destroy]
 
   def index
     @groups = current_user.groups
@@ -39,5 +40,9 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def checkbox_users
+    @users_id = User.where.not(id: current_user.id)
   end
 end
