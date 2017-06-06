@@ -17,7 +17,7 @@ describe MessagesController do
     end
 
     it "renders the :index template" do
-      expect(response).to render_template :index
+      render_template :index
     end
   end
 
@@ -32,11 +32,11 @@ describe MessagesController do
 
       it "redirects to messages#index" do
         get :index, group_id: group.id
-        expect(response).to render_template :index
+        render_template :index
       end
     end
 
-    context "filed to save message" do
+    context "failed to save message" do
       it "cannnot save the new message in the database" do
         expect{
           post :create, group_id: group.id, message: attributes_for(:message, body: nil)
@@ -45,7 +45,7 @@ describe MessagesController do
 
       it "redirects to messages#index" do
         get :index, group_id: group.id
-        expect(response).to render_template :index
+        render_template :index
       end
     end
   end
