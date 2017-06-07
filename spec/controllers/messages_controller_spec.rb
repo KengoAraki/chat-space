@@ -17,7 +17,7 @@ describe MessagesController do
     end
 
     it "renders the :index template" do
-      render_template :index
+      expect(response).to render_template :index
     end
   end
 
@@ -32,7 +32,7 @@ describe MessagesController do
 
       it "redirects to messages#index" do
         get :index, group_id: group.id
-        render_template :index
+        expect(response).to render_template :index
       end
     end
 
@@ -45,7 +45,7 @@ describe MessagesController do
 
       it "redirects to messages#index" do
         get :index, group_id: group.id
-        render_template :index
+        expect(response).to render_template :index
       end
     end
   end
