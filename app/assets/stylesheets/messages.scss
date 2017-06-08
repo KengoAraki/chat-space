@@ -60,6 +60,7 @@ html,body{
     height: 85%;
     width: 100%;
     background-color: $navy-blue;
+    overflow-y: scroll;
 
     &-list{
       color: $white;
