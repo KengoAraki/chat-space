@@ -4,6 +4,10 @@ html,body{
   margin: 0 auto;
 }
 
+body{
+  position: fixed;
+}
+
 .chat-side{
   height: 100%;
   width: 300px;
@@ -60,6 +64,7 @@ html,body{
     height: 85%;
     width: 100%;
     background-color: $navy-blue;
+    overflow-y: scroll;
 
     &-list{
       color: $white;
