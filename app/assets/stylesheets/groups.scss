@@ -90,10 +90,12 @@
   }
 
   .chat-group-user {
-    padding: 0 15px;
+    @include clearfix;
     line-height: 50px;
+    padding-top: 5px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    list-style: none;
 
     .chat-group-user__name {
       float: left;
