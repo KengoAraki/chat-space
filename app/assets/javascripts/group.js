@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', function() {
     var id = $(this).data(id);
     var rmv_html = removeHTML(name, id);
     $('#chat-group-users').append(rmv_html);
-    $('this').parent('chat-group-from__field--right').remove();
+    $(this).parent('chat-group-from__field--right').remove();
   });
 
   $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function() {
