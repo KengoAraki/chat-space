@@ -56,16 +56,6 @@
       width: 70%;
       position: relative;
 
-      .chat-group-form__search {
-        @include clearfix;
-        position: absolute;
-        top: 10px;
-        width: 100%;
-
-        input[type = "checkbox"]{
-          margin-left: 10px;
-        }
-      }
 
       #chat-group-user-22{
         @include clearfix;
@@ -90,10 +80,12 @@
   }
 
   .chat-group-user {
-    padding: 0 15px;
+    @include clearfix;
     line-height: 50px;
+    padding-top: 5px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    list-style: none;
 
     .chat-group-user__name {
       float: left;
