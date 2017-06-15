@@ -1,25 +1,31 @@
 $(function() {
   function buildHTML(message) {
+    var image_html = ''
+    if(message.image) {
+      image_html = `<img src= ${ message.image } alt= ${ message.image } >`;
+    };
+
     var html = `<p class="chat-main__message-name">
                   ${ message.name }
                 </p>
                 <p class="chat-main__message-time">
                   ${ message.time }
                 </p>
+                ${ image_html }
                 <p class="chat-main__message-body">
                   ${ message.body }
                 </p>`;
     return html;
   };
 
-  function buildFlash_notice(notice){
+  function buildFlash_notice(notice) {
     var flash = `<div class="flash-alert-notice">
                   ${ notice }
                 </div>`;
     return flash;
   }
 
-  function buildFlash_alert(alert){
+  function buildFlash_alert(alert) {
     var flash = `<div class="flash-alert-alert">
                   ${ alert }
                 </div>`;
@@ -33,19 +39,16 @@ $(function() {
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('#message_body');
-    var message = textField.val();
+    var message = new FormData($('#new_message')[0]);
     $('.flash-alert-notice').remove();
     $('.flash-alert-alert').remove();
     $.ajax({
       type: 'POST',
       url: './messages',
-      data: {
-        message: {
-          body: message
-        }
-      },
-      dataType: 'json'
+      data: message,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
 
     .done(function(message) {
