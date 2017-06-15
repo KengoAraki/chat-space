@@ -19,3 +19,12 @@
 db/schema.rb
 
 user-materials/
+
+group-materials/
+
+.env
+
+*.jpg
+*.png
+*.jpeg
+*.gif
