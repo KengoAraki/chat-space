@@ -19,3 +19,5 @@
 db/schema.rb
 
 user-materials/
+
+*.jpg
