@@ -3,6 +3,10 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
@@ -13,7 +17,6 @@ class MessagesController < ApplicationController
         format.json
       end
     else
-      # flash.now[:alert] = "メッセージが投稿されませんでした"
       render :index
     end
   end
