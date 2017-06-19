@@ -65,7 +65,9 @@ $(document).on('turbolinks:load', function() {
     return false;
   });
 
-  setInterval(autoupdate, 5000);
+  if (document.location.href.match("/messages")) {
+    setInterval(autoupdate, 5000);
+  }
 
   function autoupdate() {
     if($('#new_message').val() != 0); {
@@ -80,9 +82,10 @@ $(document).on('turbolinks:load', function() {
           html += buildHTML(data.messages[i]);
         };
         $('.chat-main__message.clearfix#319').append(html);
+        scroll();
       })
       .fail(function() {
-        alert('更新に失敗しました');
+        console.log('更新に失敗しました');
       });
     }
   }
