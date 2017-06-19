@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function buildHTML(message) {
     var html = `<p class="chat-main__message-name">
                   ${ message.name }
@@ -64,4 +64,26 @@ $(function() {
     });
     return false;
   });
+
+  setInterval(autoupdate, 5000);
+
+  function autoupdate() {
+    if($('#new_message').val() != 0); {
+      $.ajax({
+        type: 'GET',
+        url: './messages',
+        dataType: 'json'
+      })
+      .done(function(data) {
+        var html = "";
+        for(var i = $('.chat-main__message-name').length; i < data.messages.length; i++) {
+          html += buildHTML(data.messages[i]);
+        };
+        $('.chat-main__message.clearfix#319').append(html);
+      })
+      .fail(function() {
+        alert('更新に失敗しました');
+      });
+    }
+  }
 });
