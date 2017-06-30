@@ -39,3 +39,7 @@ gem "haml-rails", "~> 0.9"
 gem "font-awesome-rails"
 gem 'devise'
 gem 'rake', '< 11.0'
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
+gem 'dotenv'
