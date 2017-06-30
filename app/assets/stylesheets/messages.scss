@@ -154,9 +154,14 @@ body{
           float: left;
         }
 
+        &-image{
+          padding: 10px 0 20px;
+          clear: both;
+        }
+
         &-body{
           color: $dark-gray;
-          padding: 10px 0 30px;
+          padding: 10px 0 20px;
           clear: both;
         }
       }
