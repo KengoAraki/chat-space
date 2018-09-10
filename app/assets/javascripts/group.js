@@ -45,9 +45,8 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#user-search-result').on('click', '.chat-group-user__btn--add', function(user) {
-    var name = $(this).data(name);
-    var id = $(this).data(id);
-    var rmv_html = removeHTML(name, id);
+    var user = $(this).data();
+    var rmv_html = removeHTML(user);
     $('#chat-group-users').append(rmv_html);
     $(this).parent('chat-group-from__field--right').remove();
   });
